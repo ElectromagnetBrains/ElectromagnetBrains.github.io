@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap");
+*::selection {
+  content: "";
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: #bbbbbb;
+  font-size: 0;
+  font-family: Smooth Sans;
+  max-width: 100vw;
+  height: fit-content;
+  overflow: scroll;
+}
+button:hover {
+  cursor: pointer;
+}
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+nav {
+  background-color: #dddddd;
+  color: #222222;
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  flex-direction: row;
+  height: 5vw;
+  padding: 0.5vw;
+  z-index: 1002;
+}
+nav div {
+  margin: 0 1vw 0 0;
+}
+#Logo {
+  width: auto;
+  height: 5vw;
+}
+#LogoContainer {
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: auto;
+}
+nav a {
+  color: #222222;
+  text-decoration: none;
+}
+.nav-name {
+  text-align: center;
+}
+.onlylandscape,
+.onlyportrait {
+  display: none;
+}
+.dropdown-content {
+  display: none;
+}
+.sidebar div,
+.dropdown-button,
+.dropdown-content,
+.dropdown-content div {
+  margin: 0;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropdownnohover,
+.dropdownhover {
+  display: none;
+}
+.dropdown:hover .dropdownhover {
+  display: inline-block;
+}
+.hero {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  margin-top: 6vw;
+  padding: 0;
+  margin: 0;
+  filter: brightness(50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero-text {
+  color: rgb(0, 255, 255);
+  width: 100vw;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.hero-subtext {
+  display: block;
+  color: burlywood;
+  font-size: 3vw;
+  max-width: 66.66vw;
+  text-align: center;
+  height: auto;
+}
+.hero,
+.hero-text {
+  margin: 6vw 0 0 0;
+  animation: mta 1s linear;
+}
+@keyframes mta {
+  from {
+    margin: 0 0 0 0;
+  }
+  to {
+    margin: 6vw 0 0 0;
+  }
+}
+.Main {
+  color: indianred;
+  margin: 6vw auto 0 auto;
+  text-align: center;
+  width: 85vw;
+  margin: 0 auto 0 auto;
+}
+.quote-mastercontainer {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.quote-mastercontainer button {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: beige;
+  color: darkslategrey;
+}
+.quote-container {
+  width: 75vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+.quote {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+  height: fit-content;
+  scroll-snap-align: center;
+  padding: 2.5vw;
+  margin: 2.5vw;
+  background-color: darkslategray;
+}
+.person {
+  height: auto;
+}
+.quote-position {
+  color: blueviolet;
+}
+.quote-text {
+  display: block;
+  color: coral;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.quote::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), transparent 75%, red);
+  animation: border-animation 2.5s linear infinite;
+  z-index: -1;
+}
+@keyframes border-animation {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+@media (orientation: portrait) {
+  body {
+    font-size: 1.618vh;
+  }
+  nav {
+    width: 99.5vw;
+    padding-right: 0;
+  }
+  #LogoContainer {
+    height: 5vw;
+    margin: 0 1vw 0 0;
+  }
+  .nav-name {
+    font-size: 2.37684vw;
+  }
+  .sidebar-button {
+    width: 5vw;
+    height: auto;
+    z-index: 1001;
+  }
+  .sidebar-on-button {
+    display: grid;
+    visibility: visible;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 25vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: -25%;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2.5vw);
+    transition: right 0.5s linear;
+    z-index: 1001;
+  }
+  .sideblur {
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s linear;
+    border: none;
+    overflow: hidden;
+  }
+  .sideblur:hover {
+    cursor: default;
+  }
+  .sidebar div {
+    padding: 1vw 0 1vw 0;
+    background-color: transparent;
+  }
+  .sidebarhoverable:hover {
+    background-color: #505050;
+  }
+  .onlyportrait {
+    margin: 0;
+    width: 5vw;
+    display: block;
+    padding: 0 10vw 0 10vw;
+    margin: 0 0 0 auto;
+  }
+  .nm {
+    display: grid;
+    align-items: center;
+    width: 5vw;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .nm2 {
+    display: grid;
+    align-items: center;
+    width: 5vw;
+    padding: 0 !important;
+    margin: 0.5vw 10vw 0.5vw 10vw !important;
+  }
+  .Main {
+    font-size: 2vh;
+  }
+  .hero-text {
+    font-size: 15vw;
+  }
+  .quote-mastercontainer {
+    width: 87vw;
+  }
+  .quote-mastercontainer button {
+    width: 5vw;
+    padding: 1.25vw;
+    margin: 1.25vw;
+    font-size: 5vw;
+    border-radius: 2vw;
+  }
+  .quote {
+    width: 65vw;
+    border-radius: 5vw;
+  }
+  .person {
+    width: 65vw;
+    border-radius: 5vw;
+  }
+  .quote::after {
+    padding: 1vw;
+    border-radius: 5vw;
+  }
+}
+@media (orientation: landscape) {
+  body {
+    font-size: 1.618vw;
+  }
+  nav {
+    width: 99vw;
+  }
+  #LogoContainer {
+    height: 5vw;
+    margin: 0 0.5vw 0 0;
+  }
+  .nav-name {
+    font-size: 1.5vw;
+  }
+  .dropdown {
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+  .dropdown-button {
+    z-index: 1;
+  }
+  .dropdown-content {
+    top: 0;
+    position: absolute;
+  }
+  .s1 {
+    height: 4vw;
+  }
+  .dropdown,
+  .dropdown-button,
+  .dropdown-content {
+    width: 10vw;
+    height: fit-content;
+    background-color: #dddddd;
+  }
+  .dropdown-content a {
+    height: fit-content;
+    margin: 1vw 0 1vw 0;
+  }
+  .navr {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    margin-left: auto;
+  }
+  .onlylandscape {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+  }
+  .Main {
+    font-size: 3vw;
+  }
+  .hero-text {
+    font-size: 15vw;
+  }
+  .quote-mastercontainer {
+    width: 85vw;
+  }
+  .quote-mastercontainer button {
+    width: 3vw;
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+  }
+  .quote {
+    width: 15vw;
+    border-radius: 2.5vw;
+  }
+  .person {
+    width: 15vw;
+    border-radius: 2.5vw;
+  }
+  .quote-position {
+    font-size: 1.5vw;
+  }
+  .quote-text {
+    font-size: 1vw;
+  }
+  .quote::after {
+    padding: 0.5vw;
+    border-radius: 2.5vw;
+  }
+}

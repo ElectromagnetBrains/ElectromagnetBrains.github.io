@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responive layout for websites</title>
+    <link rel="shortcut icon" href="favicon.gif" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" id="LogoContainer" class="l">
+        <img src="favicon.gif" alt="(Logo)" title="(Logo)" id="Logo" />
+      </a>
+      <div class="l nav-name">Name</div>
+      <div class="onlylandscape">
+        <div class="l"><a href="index.html" title="Link">Home</a></div>
+        <div class="l"><a href="#1" title="Link">Link</a></div>
+        <div class="l dropdown">
+          <div class="dropdown-button">
+            Dropdown<span class="dropdownnohover">◂</span
+            ><span class="dropdownhover">▾</span>
+          </div>
+          <div class="dropdown-content">
+            <div class="s1"></div>
+            <div>
+              <a href="#2" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+            <div>
+              <a href="#3" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+            <div>
+              <a href="#4" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+          </div>
+        </div>
+        <div class="navr">
+          <div class="r"><a href="#6" title="Link">Link</a></div>
+          <div class="r"><a href="#5" title="Link">Link</a></div>
+        </div>
+      </div>
+      <div class="onlyportrait">
+        <div class="r nm sidebar-on-button" onclick="sidebar()">
+          <img
+            src="menu-button.gif"
+            alt="Menu Button"
+            title="Menu Button"
+            class="sidebar-button"
+          />
+        </div>
+        <button onclick="nosidebar()" class="sideblur"></button>
+        <div class="sidebar">
+          <div class="nm2 sidebar-off-button" onclick="nosidebar()">
+            <img
+              src="cross.gif"
+              alt="Close Sidebar Button"
+              title="Close Sidebar Button"
+              class="sidebar-button"
+            />
+          </div>
+          <div class="sidebarhoverable">
+            <a href="index.html" title="Link">Home</a>
+          </div>
+          <div class="sidebarhoverable"><a href="#1" title="Link">Link</a></div>
+          <div class="dropdown">
+            <div class="dropdown-button sidebarhoverable">
+              Dropdown<span class="dropdownnohover">◂</span
+              ><span class="dropdownhover">▾</span>
+            </div>
+            <div class="dropdown-content">
+              <div class="sidebarhoverable">
+                <a href="#2" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+              <div class="sidebarhoverable">
+                <a href="#3" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+              <div class="sidebarhoverable">
+                <a href="#4" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+            </div>
+          </div>
+          <div class="sidebarhoverable"><a href="#5" title="Link">Link</a></div>
+          <div class="sidebarhoverable"><a href="#6" title="Link">Link</a></div>
+        </div>
+      </div>
+    </nav>
+    <img src="hero.jpg" alt="Hero" class="hero" />
+    <p class="hero-text">
+      Name<br />
+      <span class="hero-subtext"></span>
+    </p>
+    <section class="Main">
+      <div class="quote-mastercontainer">
+        <button onclick=" previousQuote(quoteContainer, quoteContainerWidth)">
+          &lt;
+        </button>
+        <div class="quote-container">
+          <div class="quote">
+            <img src="person.png" alt="Person" title="Person" class="person" />
+            <div class="quote-position">
+              Position<span class="quote-text"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                dignissimos eaque corporis saepe exercitationem dolores nisi
+                veniam facere.</span
+              >
+            </div>
+          </div>
+          <div class="quote">
+            <img src="person.png" alt="Person" title="Person" class="person" />
+            <div class="quote-position">
+              Position<span class="quote-text"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                dignissimos eaque corporis saepe exercitationem dolores nisi
+                veniam facere.</span
+              >
+            </div>
+          </div>
+          <div class="quote">
+            <img src="person.png" alt="Person" title="Person" class="person" />
+            <div class="quote-position">
+              Position<span class="quote-text"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                dignissimos eaque corporis saepe exercitationem dolores nisi
+                veniam facere.</span
+              >
+            </div>
+          </div>
+          <div class="quote">
+            <img src="person.png" alt="Person" title="Person" class="person" />
+            <div class="quote-position">
+              Position<span class="quote-text"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                dignissimos eaque corporis saepe exercitationem dolores nisi
+                veniam facere.</span
+              >
+            </div>
+          </div>
+          <div class="quote">
+            <img src="person.png" alt="Person" title="Person" class="person" />
+            <div class="quote-position">
+              Position<span class="quote-text"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                dignissimos eaque corporis saepe exercitationem dolores nisi
+                veniam facere.</span
+              >
+            </div>
+          </div>
+        </div>
+        <button onclick="nextQuote(quoteContainer, quoteContainerWidth)">
+          &gt;
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
