@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap");
 *::selection {
   content: "";
-  color: #000000;
-  background-color: #ffffff;
-  text-decoration: underline;
+  color: inherit;
+  background-color: inherit;
+  text-decoration: inherit;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -29,14 +29,13 @@ button:hover {
   float: right;
 }
 nav {
-  background-color: rgb(82, 189, 0);
-  color: #b70823;
+  background-color: rgb(124, 26, 26);
+  color: #0098ff;
   display: flex;
   position: fixed;
   top: 0;
   align-items: center;
   flex-direction: row;
-  height: 5vw;
   padding: 0.5vw;
   z-index: 1002;
 }
@@ -45,7 +44,6 @@ nav div {
 }
 #Logo {
   width: auto;
-  height: 5vw;
 }
 #LogoContainer {
   background-color: transparent;
@@ -56,7 +54,8 @@ nav div {
 }
 nav a {
   text-decoration: none;
-  color: #b70823;
+  background-color: rgb(124, 26, 26);
+  color: #0098ff;
 }
 nav a:visited {
   color: inherit;
@@ -100,6 +99,10 @@ nav a:visited {
   left: 0;
   z-index: -1;
 }
+.landscape,
+.portrait {
+  display: none;
+}
 .hero-text {
   color: rgb(149, 255, 0);
   width: 100vw;
@@ -120,7 +123,7 @@ nav a:visited {
 }
 .hero,
 .hero-text {
-  margin: 6vw 0 0 0;
+  margin: 8.5vw 0 0 0;
   animation: mta 1s linear;
 }
 @keyframes mta {
@@ -178,17 +181,17 @@ nav a:visited {
   scroll-snap-align: center;
   padding: 2.5vw;
   margin: 2.5vw;
-  background-color: darkslategray;
+  background-color: rgb(58, 12, 98);
 }
 .person {
   height: auto;
 }
 .quote-position {
-  color: blueviolet;
+  color: rgb(23, 206, 78);
 }
 .quote-text {
   display: block;
-  color: coral;
+  color: rgb(210, 64, 91);
 }
 @property --angle {
   syntax: "<angle>";
@@ -200,7 +203,7 @@ nav a:visited {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: conic-gradient(from var(--angle), transparent 75%, red);
+  background-image: conic-gradient(from var(--angle), transparent 75%, rgb(255, 0, 140));
   animation: border-animation 2.5s linear infinite;
   z-index: -1;
 }
@@ -218,18 +221,22 @@ nav a:visited {
   }
   nav {
     width: 99.5vw;
+    height: 7.5vw;
     padding-right: 0;
   }
   #LogoContainer {
-    height: 5vw;
+    height: 7.5vw;
     margin: 0 1vw 0 0;
   }
+  #Logo {
+    height: 7.5vw;
+  }
   .nav-name {
-    font-size: 2.37684vw;
+    font-size: 3.5vw;
   }
   .sidebar-button {
-    width: 5vw;
-    height: auto;
+    width: auto;
+    height: 7.5vw;
     z-index: 1001;
   }
   .sidebar-on-button {
@@ -274,28 +281,33 @@ nav a:visited {
     background-color: transparent;
   }
   .sidebarhoverable:hover {
-    background-color: #505050;
+    background-color: rgb(0, 255, 162);
+  }
+  .sidebar a {
+    background-color: transparent;
   }
   .onlyportrait {
     margin: 0;
-    width: 5vw;
+    width: 7.5vw;
     display: block;
-    padding: 0 10vw 0 10vw;
     margin: 0 0 0 auto;
+    padding: 0 8.75vw 0 0;
   }
   .nm {
     display: grid;
     align-items: center;
-    width: 5vw;
+    width: 7.5vw;
+    height: 7.5vw;
     padding: 0 !important;
     margin: 0 !important;
   }
   .nm2 {
     display: grid;
     align-items: center;
-    width: 5vw;
+    width: 7.5vw;
+    height: 7.5vw;
     padding: 0 !important;
-    margin: 0.5vw 10vw 0.5vw 10vw !important;
+    margin: 0 8.75vw 0 8.75vw !important;
   }
   .Main {
     font-size: 2vh;
@@ -303,8 +315,12 @@ nav a:visited {
   .hero-text {
     font-size: 10vw;
   }
+  .portrait {
+    display: block;
+  }
   .quote-mastercontainer {
-    width: 87vw;
+    width: 72vw;
+    margin: auto;
   }
   .quote-mastercontainer button {
     width: 5vw;
@@ -314,11 +330,11 @@ nav a:visited {
     border-radius: 2vw;
   }
   .quote {
-    width: 65vw;
+    width: 50vw;
     border-radius: 5vw;
   }
   .person {
-    width: 65vw;
+    width: 50vw;
     border-radius: 5vw;
   }
   .quote::after {
@@ -332,13 +348,18 @@ nav a:visited {
   }
   nav {
     width: 99vw;
+    height: 5vw;
   }
   #LogoContainer {
     height: 5vw;
     margin: 0 0.5vw 0 0;
   }
+  #Logo {
+    height: 5vw;
+  }
   .nav-name {
     font-size: 1.5vw;
+    margin: auto 3vw auto 1vw;
   }
   .dropdown {
     display: grid;
@@ -360,8 +381,8 @@ nav a:visited {
   .dropdown-content {
     width: 10vw;
     height: fit-content;
-    background-color: rgb(82, 189, 0);
-    color: #b70823;
+    background-color: rgb(124, 26, 26);
+    color: #0098ff;
   }
   .dropdown-content a {
     height: fit-content;
@@ -373,21 +394,24 @@ nav a:visited {
     flex-direction: row;
     margin: 0;
   }
+  #calculator-nav-button {
+    margin: 0 0 0 3vw;
+  }
   .Main {
     font-size: 3vw;
+  }
+  .landscape {
+    display: block;
   }
   .hero-text {
     font-size: 10vw;
   }
   .quote-mastercontainer {
-    width: 85vw;
+    width: 75vw;
+    margin: auto;
   }
   .quote-mastercontainer button {
-    width: 3vw;
-    padding: 1vw;
-    margin: 1vw;
-    font-size: 2vw;
-    border-radius: 1vw;
+    display: none;
   }
   .quote {
     width: 15vw;
