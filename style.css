@@ -468,28 +468,29 @@ nav a:visited {
 
 /* Calculator Styles */
 .calculator {
-  width: 80vw;
-  max-width: 400px;
-  padding: 20px;
+  width: auto;
+  max-width: 600px;
+  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(238, 223, 15, 0.903);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
+  margin: auto;
 }
 
 .calculator-title {
-  grid-column: span 5;
+  grid-column: span 4;
   text-align: center;
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .calculator-display {
-  grid-column: span 5;
-  background-color: #e6e6e6;
-  border-radius: 5px;
+  grid-column: span 4;
+  background-color: #17cfd5;
+  border-radius: 3px;
   padding: 10px;
   font-size: 32px;
   text-align: right;
@@ -497,7 +498,7 @@ nav a:visited {
 }
 
 button {
-  padding: 20px;
+  padding: 15px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
@@ -591,12 +592,12 @@ button.number:hover {
 
 @media (orientation: portrait) {
   .calculator {
-    width: 90vh;
-    max-width: 400px;
+    width: 90vw;
+    max-width: 800px;
   }
 
   button {
-    padding: 15px;
+    padding: 10px;
     font-size: 16px;
   }
 
@@ -607,12 +608,13 @@ button.number:hover {
 
 @media (orientation: landscape) {
   .calculator {
-    width: 80vw;
-    max-width: 600px;
+    height: auto;
+    width: 25vw;
+    max-width: 500px;
+    margin: auto;
   }
 
   button {
-    padding: 20px;
     font-size: 18px;
   }
 
