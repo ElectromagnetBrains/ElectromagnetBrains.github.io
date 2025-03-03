@@ -6,6 +6,23 @@
     <title>Electromagnet Brains - Calculator</title>
     <link rel="shortcut icon" href="favicon.gif" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .Main {
+        animation: mta 0.5s linear;
+        width: 100%;
+      }
+      @media (orientation: portrait) {
+        .Main {
+          margin: 11vw 0 0 0;
+        }
+      }
+      @media (orientation: landscape) {
+        .Main {
+          margin: 6vw 0 0 0;
+        }
+      }
+    </style>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -126,5 +143,49 @@
         </div>
       </div>
     </nav>
+    <section class="Main">
+      <div class="calculator">
+        <div class="calculator-title">Calculator</div>
+        <div class="calculator-display" id="calculator-display">0</div>
+        <button class="1" onclick="calculator(1)">1</button>
+        <button class="2" onclick="calculator(2)">2</button>
+        <button class="3" onclick="calculator(3)">3</button>
+        <button class="4" onclick="calculator(4)">4</button>
+        <button class="5" onclick="calculator(5)">5</button>
+        <button class="6" onclick="calculator(6)">6</button>
+        <button class="7" onclick="calculator(7)">7</button>
+        <button class="8" onclick="calculator(8)">8</button>
+        <button class="9" onclick="calculator(9)">9</button>
+        <button class="0" onclick="calculator(0)">0</button>
+        <button class="+" onclick="calculator('+')">+</button>
+        <button class="-" onclick="calculator('-')">-</button>
+        <button class="*" onclick="calculator('*')">*</button>
+        <button class="/" onclick="calculator('/')">/</button>
+        <button class="." onclick="calculator('.')">.</button>
+        <button class="sin" onclick="calculator('sin')">sin</button>
+        <button class="cos" onclick="calculator('cos')">cos</button>
+        <button class="tan" onclick="calculator('tan')">tan</button>
+        <button class="log" onclick="calculator('log')">log</button>
+        <button class="sqrt" onclick="calculator('sqrt')">sqrt</button>
+        <button class="pow" onclick="calculator('pow')">pow</button>
+        <button class="(" onclick="calculator('(')">(</button>
+        <button class=")" onclick="calculator(')')">)</button>
+        <button class="%" onclick="calculator('%')">%</button>
+        <button class="pi" onclick="calculator('pi')">π</button>
+        <button class="e" onclick="calculator('e')">e</button>
+        <button class="ln" onclick="calculator('ln')">ln</button>
+        <button class="exp" onclick="calculator('exp')">exp</button>
+        <button class="abs" onclick="calculator('abs')">abs</button>
+        <button class="floor" onclick="calculator('floor')">floor</button>
+        <button class="ceil" onclick="calculator('ceil')">ceil</button>
+        <button class="round" onclick="calculator('round')">round</button>
+        <button class="min" onclick="calculator('min')">min</button>
+        <button class="max" onclick="calculator('max')">max</button>
+        <button class="avg" onclick="calculator('avg')">avg</button>
+        <button class="backspace" onclick="calculator('backspace')">⌫</button>
+        <button class="clear" onclick="calculator('clear')">C</button>
+        <button class="=" onclick="calculator('=')">=</button>
+      </div>
+    </section>
   </body>
 </html>
