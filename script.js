@@ -35,7 +35,7 @@ setInterval(() => {
   AutoScrollQuote(quoteContainer, quoteContainerWidth);
 }, 15000);
 const quoteContainer = document.getElementsByClassName("quote-container")[0];
-const quoteContainerWidth = Math.round(screen.width / 4);
+const quoteContainerWidth = Math.round(screen.width / 6);
 function previousQuote(quoteContainer, quoteContainerWidth) {
   quoteContainer.scrollBy({ left: -quoteContainerWidth, behavior: "smooth" });
 }
