@@ -1,40 +1,87 @@
-function appendToDisplay(value) {
-    const display = document.getElementById('display');
-    if (value === 'pi') {
-      display.value += Math.PI;
-    } else {
-      display.value += value;
-    }
+class Calculator {
+  constructor() {
+    this.input = "";
+    this.result = "";
+    this.operator = "";
   }
-  function clearDisplay() {
-    document.getElementById('display').value = '';
+
+  appendValue(value) {
+    this.input += value;
+    document.getElementById("result").value = this.input;
   }
-  function deleteLast() {
-    const display = document.getElementById('display');
-    display.value = display.value.slice(0, -1);
+
+  clearResult() {
+    this.input = "";
+    this.result = "";
+    this.operator = "";
+    document.getElementById("result").value = "";
   }
-  function calculateResult() {
-    const display = document.getElementById('display');
+
+  calculate() {
     try {
-      let expression = display.value;
-      expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
-      expression = expression.replace(/sin\(/g, 'Math.sin(');
-      expression = expression.replace(/cos\(/g, 'Math.cos(');
-      expression = expression.replace(/tan\(/g, 'Math.tan(');
-      expression = expression.replace(/log\(/g, 'Math.log10(');
-      expression = expression.replace(/ln\(/g, 'Math.log(');
-      expression = expression.replace(/\^/g, '**');
-      expression = expression.replace(/!/g, factorial);
-      display.value = eval(expression);
+      const expression = this.input.replace(/[^\d+\-.*/\(\)\!\^%\s]/g, "");
+      const result = Function('"use strict";return (' + expression + ")")();
+      this.result = result;
+      document.getElementById("result").value = this.result;
+      this.input = "";
     } catch (error) {
-      display.value = 'Error';
+      document.getElementById("result").value = "Error";
     }
   }
-  function factorial(n) {
-    if (n === 0 || n === 1) return 1;
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-      result *= i;
+
+  clearLastChar() {
+    this.input = this.input.slice(0, -1);
+    document.getElementById("result").value = this.input;
+    if (this.input === "") {
+      this.result = "";
     }
-    return result;
   }
+
+  appendFunction(value) {
+    this.input += "(" + value + ")";
+    document.getElementById("result").value = this.input;
+  }
+}
+
+const calculator = new Calculator();
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+  if (key === "Enter") {
+    calculator.calculate();
+  } else if (key === "Escape") {
+    calculator.clearResult();
+  } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+    calculator.appendValue(key);
+  } else if (key === ".") {
+    calculator.appendValue(".");
+  } else if (key === "Backspace") {
+    calculator.clearLastChar();
+  } else if (key >= "0" && key <= "9") {
+    calculator.appendValue(key);
+  } else if (key === "=") {
+    calculator.calculate();
+  } else if (key === "C") {
+    calculator.clearResult();
+  } else if (key === "(") {
+    calculator.appendValue("(");
+  } else if (key === ")") {
+    calculator.appendValue(")");
+  } else if (key === "s") {
+    calculator.appendFunction("Math.sin");
+  } else if (key === "h") {
+    calculator.appendFunction("Math.cos");
+  } else if (key === "t") {
+    calculator.appendFunction("Math.tan");
+  } else if (key === "^") {
+    calculator.appendValue("Math.pow");
+  } else if (key === "/") {
+    calculator.appendValue("Math.sqrt");
+  } else if (key === "%") {
+    calculator.appendValue("Math.abs");
+  } else if (key === "x") {
+    calculator.appendValue("*");
+  } else {
+    // Ignore any other key press
+  }
+});

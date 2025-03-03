@@ -11,7 +11,7 @@ function sidebar() {
 }
 function nosidebar() {
   let sidebar = document.getElementsByClassName("sidebar")[0];
-  sidebar.style.right = "-25%";
+  sidebar.style.right = "-40%";
   let sideblur = document.getElementsByClassName("sideblur")[0];
   sideblur.style.backgroundColor = "rgba(255, 255, 255, 0)";
   setTimeout(function () {

@@ -123,8 +123,8 @@ nav a:visited {
 }
 .hero,
 .hero-text {
-  margin: 8.5vw 0 0 0;
-  animation: mta 1s linear;
+  margin: 6vw 0 0 0;
+  animation: mta 0.5s linear;
 }
 @keyframes mta {
   from {
@@ -136,7 +136,6 @@ nav a:visited {
 }
 .Main {
   color: indianred;
-  margin: 6vw auto 0 auto;
   text-align: center;
   width: 85vw;
   margin: 0 auto 0 auto;
@@ -203,7 +202,11 @@ nav a:visited {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: conic-gradient(from var(--angle), transparent 75%, rgb(255, 0, 140));
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 75%,
+    rgb(255, 0, 140)
+  );
   animation: border-animation 2.5s linear infinite;
   z-index: -1;
 }
@@ -217,26 +220,26 @@ nav a:visited {
 }
 @media (orientation: portrait) {
   body {
-    font-size: 1.618vh;
+    font-size: 2.5vh;
   }
   nav {
     width: 99.5vw;
-    height: 7.5vw;
+    height: 10vw;
     padding-right: 0;
   }
   #LogoContainer {
-    height: 7.5vw;
+    height: 10vw;
     margin: 0 1vw 0 0;
   }
   #Logo {
-    height: 7.5vw;
+    height: 10vw;
   }
   .nav-name {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
   .sidebar-button {
     width: auto;
-    height: 7.5vw;
+    height: 10vw;
     z-index: 1001;
   }
   .sidebar-on-button {
@@ -248,12 +251,12 @@ nav a:visited {
     flex-direction: column;
     position: absolute;
     text-align: center;
-    width: 25vw;
+    width: 40vw;
     height: 100vh;
     margin: 0;
     padding: 0;
     top: 0;
-    right: -25%;
+    right: -40%;
     background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(2.5vw);
     transition: right 0.5s linear;
@@ -276,9 +279,26 @@ nav a:visited {
   .sideblur:hover {
     cursor: default;
   }
-  .sidebar div {
-    padding: 1vw 0 1vw 0;
+  .sidebar .sidebarhoverable {
+    padding: 2.5vw 0;
     background-color: transparent;
+  }
+  .borders {
+    border-top: 0.5vw solid black;
+    border-bottom: 0.25vw solid black;
+  }
+  .borderm {
+    border-top: 0.25vw solid black;
+    border-bottom: 0.25vw solid black;
+  }
+  .borderl {
+    border-top: 0.25vw solid black;
+    border-bottom: 0.5vw solid black;
+  }
+  .dropdown {
+    padding: 0.5vw 0;
+    border-top: 1vw solid black;
+    border-bottom: 1vw solid black;
   }
   .sidebarhoverable:hover {
     background-color: rgb(0, 255, 162);
@@ -288,29 +308,31 @@ nav a:visited {
   }
   .onlyportrait {
     margin: 0;
-    width: 7.5vw;
+    width: 10vw;
     display: block;
     margin: 0 0 0 auto;
-    padding: 0 8.75vw 0 0;
+    padding: 0 15vw 0 0;
   }
   .nm {
     display: grid;
     align-items: center;
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 10vw;
     padding: 0 !important;
     margin: 0 !important;
   }
   .nm2 {
     display: grid;
     align-items: center;
-    width: 7.5vw;
-    height: 7.5vw;
+    width: 10vw;
     padding: 0 !important;
-    margin: 0 8.75vw 0 8.75vw !important;
+    margin: 0 15vw !important;
   }
   .Main {
     font-size: 2vh;
+  }
+  .hero,
+  .hero-text {
+    margin: 8.5vw 0 0 0;
   }
   .hero-text {
     font-size: 10vw;
@@ -336,6 +358,10 @@ nav a:visited {
   .person {
     width: 50vw;
     border-radius: 5vw;
+    margin: 0 0 2vh 0;
+  }
+  .quote-text {
+    margin: 2vh 0 0 0;
   }
   .quote::after {
     padding: 1vw;
@@ -400,6 +426,10 @@ nav a:visited {
   .Main {
     font-size: 3vw;
   }
+  .hero,
+  .hero-text {
+    margin: 6vw 0 0 0;
+  }
   .landscape {
     display: block;
   }
@@ -420,12 +450,14 @@ nav a:visited {
   .person {
     width: 15vw;
     border-radius: 2.5vw;
+    margin: 0 0 2vw 0;
   }
   .quote-position {
     font-size: 1.5vw;
   }
   .quote-text {
-    font-size: 1vw;
+    font-size: 1.35vw;
+    margin: 2vw 0 0 0;
   }
   .quote::after {
     padding: 0.5vw;
