@@ -179,11 +179,55 @@ document.querySelectorAll(".calculator button").forEach((button) => {
   });
 });
 
-// Dark mode toggle
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-}
-
-document
-  .getElementById("dark-mode-toggle")
-  .addEventListener("click", toggleDarkMode);
+document.addEventListener("keydown", (event) => {
+  console.log(event.key);
+  event.preventDefault();
+  const key = event.key;
+  if (key === "Enter") {
+    calculator.calculate();
+  } else if (key === "Escape") {
+    calculator.clearResult();
+  } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+    calculator.appendValue(key);
+  } else if (key === ".") {
+    calculator.appendValue(".");
+  } else if (key === "Backspace" || key === "⌫") {
+    calculator.clearLastChar();
+  } else if (key >= "0" && key <= "9") {
+    calculator.appendValue(key);
+  } else if (key === "=") {
+    calculator.calculate();
+  } else if (key === "C" || key === "c") {
+    calculator.clearResult();
+  } else if (key === "(" || key === ")") {
+    calculator.appendValue(key);
+  } else if (key === "s") {
+    calculator.appendFunction("sin");
+  } else if (key === "h") {
+    calculator.appendFunction("cos");
+  } else if (key === "t") {
+    calculator.appendFunction("tan");
+  } else if (key === "/") {
+    calculator.appendFunction("sqrt");
+  } else if (key === "|") {
+    calculator.appendFunction("abs");
+  } else if (key === "x") {
+    calculator.appendValue("*");
+  } else if (key === "p") {
+    calculator.appendConstant("π");
+  } else if (key === "e") {
+    calculator.appendConstant("e");
+  } else if (key === "E") {
+    calculator.appendFunction("exp");
+  } else if (key === "a") {
+    calculator.appendFunction("abs");
+  } else if (key === "r") {
+    calculator.appendFunction("round");
+  } else if (key === "m") {
+    calculator.appendFunction("min");
+  } else if (key === "M") {
+    calculator.appendFunction("max");
+  } else if (key === "v") {
+    calculator.appendFunction("avg");
+  }
+});

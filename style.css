@@ -589,7 +589,16 @@ button.number {
 button.number:hover {
   background-color: #d9d9d9;
 }
-
+.instructions {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: fit-content;
+  margin: 2.5vw;
+  padding: 2.5vw;
+  font-size: 1.5vw;
+}
 @media (orientation: portrait) {
   .calculator {
     width: 90vw;
@@ -609,17 +618,18 @@ button.number:hover {
 @media (orientation: landscape) {
   .calculator {
     height: auto;
+    max-height: 80vh;
     width: 25vw;
     max-width: 500px;
     margin: auto;
   }
 
   button {
-    font-size: 18px;
+    font-size: 10px;
   }
 
   .calculator-display {
-    font-size: 32px;
+    font-size: 25px;
   }
 }
 
