@@ -471,9 +471,9 @@ nav a:visited {
   width: auto;
   max-width: 600px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #690c2d;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(238, 223, 15, 0.903);
+  box-shadow: 0 0 100px rgba(91, 224, 8, 0.888);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
@@ -489,7 +489,7 @@ nav a:visited {
 
 .calculator-display {
   grid-column: span 4;
-  background-color: #17cfd5;
+  background-color: #e01790;
   border-radius: 3px;
   padding: 10px;
   font-size: 32px;
@@ -590,9 +590,9 @@ button.number:hover {
   background-color: #d9d9d9;
 }
 .instructions {
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  align-items: top-left;
+  justify-content: left;
   width: 50vw;
   height: fit-content;
   margin: 2.5vw;

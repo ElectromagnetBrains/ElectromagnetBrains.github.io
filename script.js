@@ -116,10 +116,6 @@ class Calculator {
       this.input += "Math.exp(";
     } else if (value === "ln") {
       this.input += "Math.log(";
-    } else if (value === "floor") {
-      this.input += "Math.floor(";
-    } else if (value === "ceil") {
-      this.input += "Math.ceil(";
     } else if (value === "round") {
       this.input += "Math.round(";
     } else if (value === "min") {
@@ -127,7 +123,7 @@ class Calculator {
     } else if (value === "max") {
       this.input += "Math.max(";
     } else if (value === "avg") {
-      this.input += "((a, b) => (a + b) / 2)(";
+      this.input += "Math.average(";
     }
     document.getElementById("calculator-display").innerText = this.input;
   }
@@ -220,7 +216,7 @@ document.addEventListener("keydown", (event) => {
   } else if (key === "E") {
     calculator.appendFunction("exp");
   } else if (key === "a") {
-    calculator.appendFunction("abs");
+    calculator.appendFunction("avg");
   } else if (key === "r") {
     calculator.appendFunction("round");
   } else if (key === "m") {
