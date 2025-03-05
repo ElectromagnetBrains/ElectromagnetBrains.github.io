@@ -624,14 +624,47 @@ button.number:hover {
   }
   .instructions {
     display: flex;
-    text-align: center;
-    width: 40vw;
+    text-align: left;
     height: fit-content;
-    margin: 2.5vw auto;
+    margin: 2.5vw;
     padding: auto;
     font-size: 1.5vw;
     border: 0.1vw solid black;
-    border-radius: 5vw;
-    background-color: #00ffbb;
+    color: rgb(138, 211, 65);
+    border-radius: 0.5vw;
+    background-color: #e3147f;
+    align-self: center;
   }
+}
+.instructions-container {
+  display: flex;
+  flex-direction: row;
+  border: black 0.1vw solid;
+  padding: 0.5vw;
+  border-radius: 0.5vw;
+}
+.square,
+.cube {
+  position: relative;
+}
+.square::after,
+.cube::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  color: inherit;
+  background-color: #e6e6e6;
+  inset: 0vw;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+}
+.square::after {
+  content: "²";
+}
+.cube::after {
+  content: "³";
 }

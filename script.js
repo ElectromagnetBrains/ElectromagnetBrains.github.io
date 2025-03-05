@@ -103,8 +103,6 @@ class Calculator {
   appendFunction(value) {
     if (value === "sin" || value === "cos" || value === "tan") {
       this.input += `Math.${value}(Math.PI/180*`;
-    } else if (value === "log") {
-      this.input += "Math.log10(";
     } else if (value === "sqrt") {
       this.input += "Math.sqrt(";
     } else if (value === "abs") {
@@ -113,6 +111,8 @@ class Calculator {
       this.input += "Math.exp(";
     } else if (value === "ln") {
       this.input += "Math.log(";
+    } else if (value === "log") {
+      this.input += "Math.log10(";
     } else if (value === "round") {
       this.input += "Math.round(";
     } else if (value === "min") {
@@ -121,6 +121,10 @@ class Calculator {
       this.input += "Math.max(";
     } else if (value === "avg") {
       this.input += "Math.average(";
+    } else if (value === "square") {
+      this.input += "**2";
+    } else if (value === "cube") {
+      this.input += "**3";
     }
     document.getElementById("calculator-display").innerText = this.input;
   }
@@ -161,7 +165,9 @@ document.querySelectorAll(".calculator button").forEach((button) => {
       value === "round" ||
       value === "min" ||
       value === "max" ||
-      value === "avg"
+      value === "avg" ||
+      value === "square" ||
+      value === "cube"
     ) {
       calculator.appendFunction(value);
     } else if (value === "π" || value === "e") {
@@ -222,5 +228,9 @@ document.addEventListener("keydown", (event) => {
     calculator.appendFunction("max");
   } else if (key === "v") {
     calculator.appendFunction("avg");
+  } else if (key === "@") {
+    calculator.appendFunction("square");
+  } else if (key === "#") {
+    calculator.appendFunction("cube");
   }
 });
