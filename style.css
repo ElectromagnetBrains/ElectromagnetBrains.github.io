@@ -490,7 +490,7 @@ nav a:visited {
   border-radius: 3px;
   padding: 10px;
   text-align: right;
-  overflow: hidden;
+  overflow: scroll;
 }
 button {
   padding: 15px;
