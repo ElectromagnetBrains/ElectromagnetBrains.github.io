@@ -93,7 +93,6 @@ class Calculator {
   calculate() {
     try {
       this.result = eval(this.input);
-      this.result = Math.round(this.result * 100) / 100; // Round to two decimal places
       document.getElementById("calculator-display").innerText = this.result;
       this.input = this.result.toString();
     } catch (error) {
@@ -108,8 +107,6 @@ class Calculator {
       this.input += "Math.log10(";
     } else if (value === "sqrt") {
       this.input += "Math.sqrt(";
-    } else if (value === "pow") {
-      this.input += "Math.pow(";
     } else if (value === "abs") {
       this.input += "Math.abs(";
     } else if (value === "exp") {
