@@ -1,91 +1,261 @@
-@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;700&display=swap");
+
 *::selection {
   content: "";
   color: inherit;
   background-color: inherit;
   text-decoration: inherit;
 }
+
 *::-webkit-scrollbar {
   display: none;
 }
+
 body {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: #bbbbbb;
+  background-color: #f7f7f7;
   font-size: 0;
-  font-family: Smooth Sans;
+  font-family: "Nunito", sans-serif;
   max-width: 100vw;
   height: fit-content;
   overflow: scroll;
+  color: #333;
 }
+
 button:hover {
   cursor: pointer;
 }
+
 .l {
   float: left;
 }
+
 .r {
   float: right;
 }
+
 nav {
-  background-color: rgb(124, 26, 26);
-  color: #0098ff;
+  background-color: #4caf50;
+  color: #fff;
   display: flex;
   position: fixed;
   top: 0;
   align-items: center;
   flex-direction: row;
-  padding: 0.5vw;
+  padding: 1vw;
   z-index: 1002;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
+
+nav:hover {
+  background-color: #43a047;
+}
+
 nav div {
-  margin: 0 1vw 0 0;
+  margin: 0 1.5vw 0 0;
 }
+
 #Logo {
   width: auto;
+  height: 4vw;
+  transition: transform 0.3s ease;
 }
+
+#Logo:hover {
+  transform: scale(1.1);
+}
+
 #LogoContainer {
   background-color: transparent;
   margin: 0;
   border: 0;
   padding: 0;
   width: auto;
+  display: flex;
+  align-items: center;
 }
+
 nav a {
   text-decoration: none;
-  background-color: rgb(124, 26, 26);
-  color: #0098ff;
+  background-color: transparent;
+  color: #fff;
+  transition: color 0.3s ease;
+  padding: 0.5vw 1vw;
+  border-radius: 0.3vw;
 }
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
 nav a:visited {
   color: inherit;
 }
+
 .nav-name {
   text-align: center;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  font-size: 2vw;
+  margin: auto;
+  animation: pulse 2s infinite;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .onlylandscape,
 .onlyportrait {
   display: none;
 }
+
 .dropdown-content {
   display: none;
+  position: absolute;
+  background-color: #4caf50;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0.5vw;
+  overflow: hidden;
 }
+
+.dropdown-content a {
+  color: #fff;
+  padding: 1vw;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #43a047;
+}
+
 .sidebar div,
 .dropdown-button,
 .dropdown-content,
 .dropdown-content div {
   margin: 0;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
+  animation: fadeIn 0.3s ease;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .dropdown:hover .dropdownnohover,
 .dropdownhover {
   display: none;
 }
+
 .dropdown:hover .dropdownhover {
   display: inline-block;
 }
+
+/* .hero {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  filter: brightness(60%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 1;
+}
+.hero-text {
+  color: #fff;
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+.hero-subtext {
+  display: block;
+  color: #ffeb3b;
+  font-size: 2vw;
+  max-width: 66.66vw;
+  text-align: center;
+  height: auto;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  animation: slideInLeft 1s ease;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.hero,
+.hero-text {
+  animation: mta 0.5s linear;
+}
+@keyframes mta {
+  from {
+    margin: 0 0 0 0;
+  }
+  to {
+    margin: 6vw 0 0 0;
+  }
+} */
+
 .hero {
   width: 100vw;
   height: auto;
@@ -99,12 +269,8 @@ nav a:visited {
   left: 0;
   z-index: -1;
 }
-.landscape,
-.portrait {
-  display: none;
-}
 .hero-text {
-  color: rgb(149, 255, 0);
+  color: rgb(0, 255, 255);
   width: 100vw;
   display: flex;
   position: relative;
@@ -115,47 +281,62 @@ nav a:visited {
 }
 .hero-subtext {
   display: block;
-  color: rgb(0, 232, 112);
-  font-size: 3vw;
-  max-width: 66.66vw;
+  color: burlywood;
   text-align: center;
   height: auto;
 }
 .hero,
 .hero-text {
-  margin: 6vw 0 0 0;
-  animation: mta 0.5s linear;
+  margin: 5vw 0 0 0;
+  animation: mta 1s linear;
 }
 @keyframes mta {
   from {
     margin: 0 0 0 0;
   }
   to {
-    margin: 6vw 0 0 0;
+    margin: 5vw 0 0 0;
   }
 }
 .Main {
-  color: indianred;
+  color: #555;
   text-align: center;
   width: 85vw;
-  margin: 0 auto 0 auto;
+  margin: 2vw auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 1vw;
+  font-size: 1.2vw;
+  align-self: center;
 }
+
 .quote-mastercontainer {
   height: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 3vw 0;
+  overflow: hidden;
+  border-radius: 1vw;
+  place-self: center;
 }
+
 .quote-mastercontainer button {
   height: fit-content;
-  padding: 0;
+  padding: 1vw;
   margin: 0;
   border: 0;
-  background-color: beige;
-  color: darkslategrey;
+  background-color: #ffc107;
+  color: #333;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  font-size: 1.2vw;
+  transition: background-color 0.3s ease;
 }
+
+.quote-mastercontainer button:hover {
+  background-color: #ff9800;
+}
+
 .quote-container {
   width: 75vw;
   height: fit-content;
@@ -164,11 +345,12 @@ nav a:visited {
   justify-content: start;
   padding: 0;
   margin: 0;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   overflow-y: hidden;
 }
+
 .quote {
   display: flex;
   position: relative;
@@ -178,342 +360,153 @@ nav a:visited {
   justify-items: start;
   height: fit-content;
   scroll-snap-align: center;
-  padding: 2.5vw;
-  margin: 2.5vw;
-  background-color: rgb(58, 12, 98);
+  padding: 3vw;
+  margin: 2vw;
+  background-color: #3f51b5;
+  border-radius: 1.5vw;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
+
 .person {
   height: auto;
+  width: 10vw;
+  border-radius: 50%;
+  margin-bottom: 1vw;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 .quote-position {
-  color: rgb(23, 206, 78);
+  color: #ffeb3b;
+  font-size: 1vw;
+  font-style: italic;
+  font-family: "Baloo Bhaijaan 2", cursive;
 }
+
 .quote-text {
   display: block;
-  color: rgb(210, 64, 91);
+  font-size: 1.3vw;
+  text-align: center;
 }
+
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
+.quote::before,
 .quote::after {
   content: "";
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  background-image: conic-gradient(
-    from var(--angle),
-    transparent 75%,
-    rgb(255, 0, 140)
-  );
-  animation: border-animation 2.5s linear infinite;
   z-index: -1;
+  border-radius: 2.5vw;
+  background-image: conic-gradient(from var(--angle), transparent 75%, yellow);
+  bottom: 50%;
+  left: 50%;
+  translate: -50% 50%;
+  padding: 0.5vw;
+  animation: bdrdan 2.5s infinite linear;
 }
-@keyframes border-animation {
-  from {
+@keyframes bdrdan {
+  0% {
     --angle: 0deg;
   }
-  to {
+  100% {
     --angle: 360deg;
   }
 }
 
-@media (orientation: portrait) {
-  body {
-    font-size: 2.5vh;
-  }
-  nav {
-    width: 99.5vw;
-    height: 10vw;
-    padding-right: 0;
-  }
-  #LogoContainer {
-    height: 10vw;
-    margin: 0 1vw 0 0;
-  }
-  #Logo {
-    height: 10vw;
-  }
-  .nav-name {
-    font-size: 5vw;
-  }
-  .sidebar-button {
-    width: auto;
-    height: 10vw;
-    z-index: 1001;
-  }
-  .sidebar-on-button {
-    display: grid;
-    visibility: visible;
-  }
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    text-align: center;
-    width: 40vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    right: -40%;
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(2.5vw);
-    transition: right 0.5s linear;
-    z-index: 1001;
-  }
-  .sideblur {
-    width: 100vw;
-    height: 100vh;
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.5s linear;
-    border: none;
-    overflow: hidden;
-  }
-  .sideblur:hover {
-    cursor: default;
-  }
-  .sidebar .sidebarhoverable {
-    padding: 2.5vw 0;
-    background-color: transparent;
-  }
-  .borders {
-    border-top: 0.5vw solid black;
-    border-bottom: 0.25vw solid black;
-  }
-  .borderm {
-    border-top: 0.25vw solid black;
-    border-bottom: 0.25vw solid black;
-  }
-  .borderl {
-    border-top: 0.25vw solid black;
-    border-bottom: 0.5vw solid black;
-  }
-  .dropdown {
-    padding: 0.5vw 0;
-    border-top: 1vw solid black;
-    border-bottom: 1vw solid black;
-  }
-  .sidebarhoverable:hover {
-    background-color: rgb(0, 255, 162);
-  }
-  .sidebar a {
-    background-color: transparent;
-  }
-  .onlyportrait {
-    margin: 0;
-    width: 10vw;
-    display: block;
-    margin: 0 0 0 auto;
-    padding: 0 15vw 0 0;
-  }
-  .nm {
-    display: grid;
-    align-items: center;
-    width: 10vw;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .nm2 {
-    display: grid;
-    align-items: center;
-    width: 10vw;
-    padding: 0 !important;
-    margin: 0 15vw !important;
-  }
-  .Main {
-    font-size: 2vh;
-  }
-  .hero,
-  .hero-text {
-    margin: 8.5vw 0 0 0;
-  }
-  .hero-text {
-    font-size: 10vw;
-  }
-  .portrait {
-    display: block;
-  }
-  .quote-mastercontainer {
-    width: 72vw;
-    margin: auto;
-  }
-  .quote-mastercontainer button {
-    width: 5vw;
-    padding: 1.25vw;
-    margin: 1.25vw;
-    font-size: 5vw;
-    border-radius: 2vw;
-  }
-  .quote {
-    width: 50vw;
-    border-radius: 5vw;
-  }
-  .person {
-    width: 50vw;
-    border-radius: 5vw;
-    margin: 0 0 2vh 0;
-  }
-  .quote-text {
-    margin: 2vh 0 0 0;
-  }
-  .quote::after {
-    padding: 1vw;
-    border-radius: 5vw;
-  }
-}
-@media (orientation: landscape) {
-  body {
-    font-size: 1.618vw;
-  }
-  nav {
-    width: 99vw;
-    height: 5vw;
-  }
-  #LogoContainer {
-    height: 5vw;
-    margin: 0 0.5vw 0 0;
-  }
-  #Logo {
-    height: 5vw;
-  }
-  .nav-name {
-    font-size: 1.5vw;
-    margin: auto 3vw auto 1vw;
-  }
-  .dropdown {
-    display: grid;
-    align-items: center;
-    text-align: center;
-  }
-  .dropdown-button {
-    z-index: 1;
-  }
-  .dropdown-content {
-    top: 0;
-    position: absolute;
-  }
-  .s1 {
-    height: 4vw;
-  }
-  .dropdown,
-  .dropdown-button,
-  .dropdown-content {
-    width: 10vw;
-    height: fit-content;
-    background-color: rgb(124, 26, 26);
-    color: #0098ff;
-  }
-  .dropdown-content a {
-    height: fit-content;
-    margin: 1vw 0 1vw 0;
-  }
-  .onlylandscape {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin: 0;
-  }
-  #calculator-nav-button {
-    margin: 0 0 0 3vw;
-  }
-  .Main {
-    font-size: 3vw;
-  }
-  .hero,
-  .hero-text {
-    margin: 6vw 0 0 0;
-  }
-  .landscape {
-    display: block;
-  }
-  .hero-text {
-    font-size: 10vw;
-  }
-  .quote-mastercontainer {
-    width: 75vw;
-    margin: auto;
-  }
-  .quote-mastercontainer button {
-    display: none;
-  }
-  .quote {
-    width: 15vw;
-    border-radius: 2.5vw;
-  }
-  .person {
-    width: 15vw;
-    border-radius: 2.5vw;
-    margin: 0 0 2vw 0;
-  }
-  .quote-position {
-    font-size: 1.5vw;
-  }
-  .quote-text {
-    font-size: 1.35vw;
-    margin: 2vw 0 0 0;
-  }
-  .quote::after {
-    padding: 0.5vw;
-    border-radius: 2.5vw;
-  }
+.landscape,
+.portrait {
+  display: none;
 }
 .calculator {
   width: auto;
   max-width: 600px;
-  padding: 10px;
-  background-color: #690c2d;
-  border-radius: 10px;
-  box-shadow: 0 0 100px rgba(91, 224, 8, 0.888);
+  padding: 3vw;
+  background-color: #26a69a;
+  border-radius: 1vw;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 0.75vw;
-  margin: auto;
+  grid-gap: 1vw;
+  margin: 0.25vw auto;
+  animation: slideInUp 1s ease;
 }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .calculator-title {
   grid-column: span 6;
   text-align: center;
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 2.5vw;
+  color: #fff;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
 .calculator-display {
   grid-column: span 6;
-  background-color: rgb(114, 226, 48);
-  color: rgb(130, 27, 27);
-  border-radius: 3px;
-  padding: 10px;
+  background-color: #e0f2f1;
+  color: #26a69a;
+  border-radius: 0.5vw;
+  padding: 1.2vw;
   text-align: right;
-  overflow: scroll;
+  overflow: hidden;
+  font-size: 2vw;
+  min-height: 3vw;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: monospace;
 }
+
 button {
-  padding: 15px;
-  font-size: 18px;
+  padding: 1vw;
+  font-size: 1.3vw;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5vw;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #fff;
+  color: #333;
+  align-items: top;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 button:hover {
-  background-color: #d9d9d9;
+  background-color: #e0f7fa;
+  transform: translateY(-3px);
 }
+
 button:active {
-  background-color: #bfbfbf;
+  background-color: #b2dfdb;
+  transform: translateY(0);
 }
+
 button.clear,
 button.clearall {
-  background-color: #ff9999;
+  background-color: #f44336;
+  color: #fff;
 }
+
 button.clear:hover,
 button.clearall:hover {
-  background-color: #ff6666;
+  background-color: #d32f2f;
 }
+
 .square,
 .cube {
   position: relative;
@@ -539,6 +532,7 @@ button.clearall:hover {
 .cube::after {
   content: "³";
 }
+
 button.operator,
 button.sin,
 button.cos,
@@ -555,11 +549,11 @@ button.floor,
 button.ceil,
 button.round,
 button.min,
-button.max,
-button.square::after,
-button.cube::after {
-  background-color: #ffcc99;
+button.max {
+  background-color: #9c27b0;
+  color: #fff;
 }
+
 button.operator:hover,
 button.sin:hover,
 button.cos:hover,
@@ -576,78 +570,486 @@ button.floor:hover,
 button.ceil:hover,
 button.round:hover,
 button.min:hover,
-button.max:hover,
-button.square:hover::after,
-button.cube:hover::after {
-  background-color: #ff9933;
+button.max:hover {
+  background-color: #7b1fa2;
 }
+
 button.equal {
-  background-color: #99ff99;
+  background-color: #388e3c;
+  color: #fff;
 }
+
 button.equal:hover {
-  background-color: #66ff66;
+  background-color: #1b5e20;
 }
+
 button.backspace {
-  background-color: #cccccc;
+  background-color: #607d8b;
+  color: #fff;
 }
+
 button.backspace:hover {
-  background-color: #b3b3b3;
+  background-color: #455a64;
 }
+
 button.number {
-  background-color: #e6e6e6;
+  background-color: #cfd8dc;
+  color: #333;
 }
+
 button.number:hover {
-  background-color: #d9d9d9;
+  background-color: #b0bec5;
 }
+
 .instructions-container {
   display: flex;
   flex-direction: row;
-  border: black 0.1vw solid;
-  padding: 0.5vw;
+  border: none;
   border-radius: 0.5vw;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 0.1vw solid black;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  font-size: 1.1vw;
+  max-width: 80vw;
+  text-align: center;
+  animation: fadeIn 1s ease;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1003;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 1vw;
+  position: relative;
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal h2 {
+  font-family: "Baloo Bhaijaan 2", cursive;
+  color: #3f51b5;
+}
+
+.modal p {
+  font-size: 1.2vw;
+  line-height: 1.6;
+}
+
 @media (orientation: portrait) {
+  body {
+    font-size: 2vh;
+  }
+
+  nav {
+    width: 99.5vw;
+    padding: 0 0 0 0.5vw;
+    height: 10vw;
+  }
+
+  #LogoContainer {
+    height: 8vw;
+    margin: 0 1vw 0 0;
+  }
+
+  #Logo {
+    height: 8vw;
+  }
+
+  .nav-name {
+    font-size: 4vw;
+  }
+
+  .sidebar-button {
+    width: auto;
+    height: 8vw;
+    z-index: 1001;
+  }
+
+  .sidebar-on-button {
+    display: grid;
+    visibility: visible;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 40vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: -40%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: right 0.5s linear;
+    z-index: 1001;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .sideblur {
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s linear;
+    border: none;
+    overflow: hidden;
+  }
+
+  .sideblur:hover {
+    cursor: default;
+  }
+
+  .sidebar .sidebarhoverable {
+    padding: 2vw 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    font-size: 3vw;
+  }
+
+  .borders {
+    border-top: 0.2vw solid #333;
+    border-bottom: 0.1vw solid #333;
+  }
+
+  .borderm {
+    border-top: 0.1vw solid #333;
+    border-bottom: 0.1vw solid #333;
+  }
+
+  .borderl {
+    border-top: 0.1vw solid #333;
+    border-bottom: 0.2vw solid #333;
+  }
+
+  .dropdown {
+    padding: 0.5vw 0;
+    border-top: 0.5vw solid #333;
+    border-bottom: 0.5vw solid #333;
+  }
+
+  .sidebarhoverable:hover {
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .sidebar a {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  .onlyportrait {
+    margin: 0;
+    width: 10vw;
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 0 15vw 0 0;
+  }
+
+  .nm {
+    display: grid;
+    align-items: center;
+    width: 10vw;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nm2 {
+    display: grid;
+    align-items: center;
+    width: 10vw;
+    padding: 0 !important;
+    margin: 0 15vw !important;
+  }
+
+  .Main {
+    font-size: 2vh;
+    padding: 3vw;
+  }
+
+  .hero,
+  .hero-text {
+    margin: 10vw 0 0 0;
+  }
+
+  .hero-text {
+    font-size: 12vw;
+  }
+
+  .hero-subtext {
+    font-size: 3.5vw;
+  }
+
+  .portrait {
+    display: block;
+  }
+
+  .quote-mastercontainer {
+    width: 85vw;
+    margin: auto;
+  }
+
+  .quote-mastercontainer button {
+    width: 13vw;
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 3vw;
+    border-radius: 4vw;
+  }
+
+  .quote {
+    width: 75vw;
+    border-radius: 7vw;
+    padding: 3vw;
+  }
+
+  .person {
+    width: 50vw;
+    border-radius: 50%;
+    margin: 0 0 3vh 0;
+  }
+
+  .quote-position {
+    font-size: 2vw;
+  }
+
+  .quote-text {
+    font-size: 2.5vw;
+    margin: 3vh 0 0 0;
+  }
+
+  .quote::after {
+    padding: 1.5vw;
+    border-radius: 7vw;
+  }
+
   .calculator {
-    margin: 10vh auto;
+    margin: 15vh auto;
     width: 90vw;
     max-width: 800px;
   }
+
   button {
-    padding: 10px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 18px;
   }
+
   .calculator-display {
-    font-size: 28px;
+    font-size: 32px;
   }
+
   .instructions {
     display: none;
   }
 }
+
 @media (orientation: landscape) {
+  body {
+    font-size: 1.2vw;
+  }
+
+  nav {
+    width: 99vw;
+    height: 4vw;
+    padding: 0.5vw;
+  }
+
+  #LogoContainer {
+    height: 4vw;
+    margin: 0 0.5vw 0 0;
+  }
+
+  #Logo {
+    height: 4vw;
+  }
+
+  .nav-name {
+    font-size: 1.3vw;
+    margin: auto 3vw auto 1vw;
+  }
+
+  .dropdown {
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dropdown-button {
+    z-index: 1;
+  }
+
+  .dropdown-content {
+    top: 0;
+    position: absolute;
+  }
+
+  .s1 {
+    height: 4vw;
+  }
+
+  .dropdown,
+  .dropdown-button,
+  .dropdown-content {
+    width: 8vw;
+    height: fit-content;
+    background-color: #4caf50;
+    color: #fff;
+  }
+
+  .dropdown-content a {
+    height: fit-content;
+    margin: 0.75vw 0;
+    padding: 0.5vw;
+    border-radius: 0.25vw;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #43a047;
+  }
+
+  .onlylandscape {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  #calculator-nav-button {
+    margin: 0 0 0 3vw;
+  }
+
+  .Main {
+    font-size: 1.5vw;
+    padding: 2vw;
+  }
+
+  /* .hero,
+  .hero-text {
+    margin: 5vw 0 0 0;
+  } */
+
+  .landscape {
+    display: block;
+  }
+
+  .hero-text {
+    font-size: 7vw;
+  }
+
+  .hero-subtext {
+    font-size: 2vw;
+  }
+
+  .quote-mastercontainer {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .quote-mastercontainer button {
+    display: none;
+  }
+
+  .quote {
+    width: 20vw;
+    border-radius: 3vw;
+    padding: 1.5vw;
+  }
+
+  .person {
+    width: 12vw;
+    border-radius: 50%;
+    margin: 0 0 1.5vw 0;
+  }
+
+  .quote-position {
+    font-size: 1vw;
+  }
+
+  .quote-text {
+    font-size: 1.1vw;
+    margin: 1.5vw 0 0 0;
+  }
+
+  .quote::after {
+    padding: 0.3vw;
+    border-radius: 3vw;
+  }
+
   .calculator {
     height: auto;
     max-height: 75vh;
     width: auto;
-    max-width: 40vw;
-    margin: 2.5vw auto;
+    max-width: 30vw;
   }
+
   button {
+    font-size: 1.1vw;
+    padding: 0.8vw;
+  }
+
+  .calculator-display {
     font-size: 1.5vw;
   }
-  .calculator-display {
-    font-size: 2.5vw;
-  }
+
   .instructions {
     display: flex;
     text-align: left;
     height: fit-content;
-    margin: 2.5vw;
-    padding: auto;
-    font-size: 1.5vw;
-    border: 0.1vw solid black;
-    color: rgb(138, 211, 65);
-    border-radius: 0.5vw;
-    background-color: #e3147f;
+    margin: 1.5vw;
+    padding: 1vw;
+    font-size: 1vw;
+    border-radius: 0.3vw;
+    background-color: #fff;
+    color: #333;
     align-self: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 }

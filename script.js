@@ -22,6 +22,7 @@ function nosidebar() {
   let body = document.querySelector("body");
   body.style.overflow = "scroll";
 }
+
 function adjustHeroTextHeight() {
   const heroes = document.getElementsByClassName("hero");
   let Hero = [...heroes].find((img) => img.offsetParent !== null) || heroes[0];
@@ -31,6 +32,7 @@ function adjustHeroTextHeight() {
 }
 window.addEventListener("load", adjustHeroTextHeight);
 window.addEventListener("resize", adjustHeroTextHeight);
+
 setInterval(() => {
   AutoScrollQuote(quoteContainer, quoteContainerWidth);
 }, 15000);
@@ -177,7 +179,7 @@ document.addEventListener("keydown", (event) => {
     calculator.appendConstant("e");
   } else if (key === "s") {
     calculator.appendFunction("sin");
-  } else if (key === "c") {
+  } else if (key === "o") {
     calculator.appendFunction("cos");
   } else if (key === "t") {
     calculator.appendFunction("tan");
