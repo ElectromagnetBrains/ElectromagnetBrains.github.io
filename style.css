@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;700&display=swap");
-
 *::selection {
   content: "";
   color: inherit;
   background-color: inherit;
   text-decoration: inherit;
 }
-
-*::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   margin: 0;
   border: 0;
@@ -23,19 +17,15 @@ body {
   overflow: scroll;
   color: #333;
 }
-
 button:hover {
   cursor: pointer;
 }
-
 .l {
   float: left;
 }
-
 .r {
   float: right;
 }
-
 nav {
   background-color: #4caf50;
   color: #fff;
@@ -49,25 +39,21 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
-
 nav:hover {
   background-color: #43a047;
 }
-
 nav div {
   margin: 0 1.5vw 0 0;
 }
-
 #Logo {
   width: auto;
   height: 4vw;
   transition: transform 0.3s ease;
+  border-radius: 0.5vw;
 }
-
 #Logo:hover {
   transform: scale(1.1);
 }
-
 #LogoContainer {
   background-color: transparent;
   margin: 0;
@@ -77,7 +63,6 @@ nav div {
   display: flex;
   align-items: center;
 }
-
 nav a {
   text-decoration: none;
   background-color: transparent;
@@ -86,15 +71,12 @@ nav a {
   padding: 0.5vw 1vw;
   border-radius: 0.3vw;
 }
-
 nav a:hover {
   color: #ffeb3b;
 }
-
 nav a:visited {
   color: inherit;
 }
-
 .nav-name {
   text-align: center;
   font-family: "Baloo Bhaijaan 2", cursive;
@@ -102,7 +84,6 @@ nav a:visited {
   margin: auto;
   animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -114,12 +95,10 @@ nav a:visited {
     transform: scale(1);
   }
 }
-
 .onlylandscape,
 .onlyportrait {
   display: none;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -130,7 +109,6 @@ nav a:visited {
   border-radius: 0.5vw;
   overflow: hidden;
 }
-
 .dropdown-content a {
   color: #fff;
   padding: 1vw;
@@ -160,6 +138,7 @@ nav a:visited {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -175,87 +154,6 @@ nav a:visited {
   display: inline-block;
 }
 
-/* .hero {
-  width: 100vw;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  filter: brightness(60%);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.6)
-  );
-  z-index: 1;
-}
-.hero-text {
-  color: #fff;
-  width: 100vw;
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: fadeInUp 1s ease;
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -30%);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-}
-.hero-subtext {
-  display: block;
-  color: #ffeb3b;
-  font-size: 2vw;
-  max-width: 66.66vw;
-  text-align: center;
-  height: auto;
-  font-family: "Baloo Bhaijaan 2", cursive;
-  animation: slideInLeft 1s ease;
-}
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-.hero,
-.hero-text {
-  animation: mta 0.5s linear;
-}
-@keyframes mta {
-  from {
-    margin: 0 0 0 0;
-  }
-  to {
-    margin: 6vw 0 0 0;
-  }
-} */
-
 .hero {
   width: 100vw;
   height: auto;
@@ -269,6 +167,7 @@ nav a:visited {
   left: 0;
   z-index: -1;
 }
+
 .hero-text {
   color: rgb(0, 255, 255);
   width: 100vw;
@@ -279,25 +178,30 @@ nav a:visited {
   justify-content: center;
   margin: 0;
 }
+
 .hero-subtext {
   display: block;
   color: burlywood;
   text-align: center;
   height: auto;
 }
+
 .hero,
 .hero-text {
   margin: 5vw 0 0 0;
   animation: mta 1s linear;
 }
+
 @keyframes mta {
   from {
     margin: 0 0 0 0;
   }
+
   to {
     margin: 5vw 0 0 0;
   }
 }
+
 .Main {
   color: #555;
   text-align: center;
@@ -395,6 +299,7 @@ nav a:visited {
   initial-value: 0deg;
   inherits: false;
 }
+
 .quote::before,
 .quote::after {
   content: "";
@@ -410,10 +315,12 @@ nav a:visited {
   padding: 0.5vw;
   animation: bdrdan 2.5s infinite linear;
 }
+
 @keyframes bdrdan {
   0% {
     --angle: 0deg;
   }
+
   100% {
     --angle: 360deg;
   }
@@ -423,6 +330,7 @@ nav a:visited {
 .portrait {
   display: none;
 }
+
 .calculator {
   width: auto;
   max-width: 600px;
@@ -442,6 +350,7 @@ nav a:visited {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -469,6 +378,8 @@ nav a:visited {
   min-height: 3vw;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
   font-family: monospace;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 button {
@@ -511,6 +422,7 @@ button.clearall:hover {
 .cube {
   position: relative;
 }
+
 .square::after,
 .cube::after {
   width: 100%;
@@ -526,9 +438,11 @@ button.clearall:hover {
   justify-content: center;
   border-radius: inherit;
 }
+
 .square::after {
   content: "²";
 }
+
 .cube::after {
   content: "³";
 }
@@ -602,18 +516,20 @@ button.number:hover {
 }
 
 .instructions-container {
-  display: flex;
-  flex-direction: row;
-  border: none;
-  border-radius: 0.5vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1vw;
+  padding: 1vw;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 0.1vw solid black;
   font-family: "Baloo Bhaijaan 2", cursive;
   font-size: 1.1vw;
-  max-width: 80vw;
-  text-align: center;
-  animation: fadeIn 1s ease;
+  width: 22.5vw;
+  line-height: 1.5;
+  place-items: center;
 }
 
 .modal {
@@ -643,6 +559,7 @@ button.number:hover {
   from {
     transform: scale(0);
   }
+
   to {
     transform: scale(1);
   }

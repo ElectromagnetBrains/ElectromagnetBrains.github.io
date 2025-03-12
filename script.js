@@ -64,36 +64,42 @@ class Calculator {
     this.input = "";
     this.result = "";
   }
+
   appendValue(value) {
     this.input += value;
-    document.getElementById("calculator-display").innerText = this.input;
+    this.updateDisplay();
   }
+
   clearResult() {
     this.input = "";
     this.result = "";
-    document.getElementById("calculator-display").innerText = "0";
+    this.updateDisplay(true);
   }
+
   clearLastChar() {
     this.input = this.input.slice(0, -1);
-    document.getElementById("calculator-display").innerText = this.input || "0";
+    this.updateDisplay();
   }
+
   calculate() {
     try {
       this.result = eval(this.input);
-      document.getElementById("calculator-display").innerText = this.result;
+      this.updateDisplay();
       this.input = this.result.toString();
     } catch (error) {
       document.getElementById("calculator-display").innerText = "Error";
     }
   }
+
   appendConstant(value) {
     if (value === "π") {
       this.input += "Math.PI";
     } else if (value === "e") {
       this.input += "Math.E";
     }
-    document.getElementById("calculator-display").innerText = this.input;
+    this.updateDisplay();
   }
+
   appendFunction(value) {
     if (value === "sin" || value === "cos" || value === "tan") {
       this.input += `Math.${value}(Math.PI/180*`;
@@ -113,10 +119,35 @@ class Calculator {
       this.input += "Math.min(";
     } else if (value === "max") {
       this.input += "Math.max(";
+    } else if (value === "square") {
+      this.input += "**2";
+    } else if (value === "cube") {
+      this.input += "**3";
     }
-    document.getElementById("calculator-display").innerText = this.input;
+    this.input += ")";
+    this.updateDisplay();
+    this.moveCursorInsideBrackets();
+  }
+
+  moveCursorInsideBrackets() {
+    const display = document.getElementById("calculator-display");
+    const inputLength = this.input.length;
+    const lastChar = this.input[inputLength - 1];
+    if (lastChar === ")") {
+      this.input = this.input.slice(0, -1) + "0";
+      this.input();
+      this.updateDisplay();
+      display.scrollLeft = display.scrollWidth;
+    }
+  }
+
+  updateDisplay(clear = false) {
+    const display = document.getElementById("calculator-display");
+    display.innerText = clear ? "0" : this.input;
+    display.scrollLeft = display.scrollWidth;
   }
 }
+
 const calculator = new Calculator();
 document.querySelectorAll(".calculator button").forEach((button) => {
   button.addEventListener("click", () => {
