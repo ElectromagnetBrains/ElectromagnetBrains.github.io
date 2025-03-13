@@ -134,10 +134,10 @@ class Calculator {
     const inputLength = this.input.length;
     const lastChar = this.input[inputLength - 1];
     if (lastChar === ")") {
-      this.input = this.input.slice(0, -1) + "0";
-      this.input();
-      this.updateDisplay();
-      display.scrollLeft = display.scrollWidth;
+      if (this.input.includes("(")) {
+        this.input = this.input.slice(0, -1);
+        this.updateDisplay();
+      }
     }
   }
 
