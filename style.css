@@ -297,8 +297,6 @@ nav a:visited {
   initial-value: 0deg;
   inherits: false;
 }
-
-.quote::before,
 .quote::after {
   content: "";
   position: absolute;
@@ -313,7 +311,6 @@ nav a:visited {
   padding: 0.5vw;
   animation: bdrdan 2.5s infinite linear;
 }
-
 @keyframes bdrdan {
   0% {
     --angle: 0deg;
@@ -323,12 +320,105 @@ nav a:visited {
     --angle: 360deg;
   }
 }
-
 .landscape,
 .portrait {
   display: none;
 }
-
+.testimonial {
+  border-radius: 5vw;
+  display: flex;
+  background-color: #10ded7;
+  width: 90vw;
+  position: relative;
+  z-index: 0;
+  margin-top: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+.mar {
+  margin: 2.5vw;
+}
+.pad {
+  padding: 2.5vw;
+}
+.testex {
+  color: transparent;
+  border-radius: 4.71vw;
+  font-size: 1.71vw;
+  width: 26.875vw;
+  background: linear-gradient(to left, #3aa803, #a90529);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 0 #ab10ab;
+  animation: text-animate-tes 1s infinite alternate;
+}
+@keyframes text-animate-tes {
+  100% {
+    text-shadow: 0 0 0 #cdcd45;
+  }
+}
+.ourphoto {
+  display: block;
+  width: 15vw;
+  height: auto;
+  border-radius: 2.5vw;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.imgc {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 2.5vw;
+  position: relative;
+  z-index: -1;
+}
+.imgc::before,
+.imgc::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 2.5vw;
+  background-image: conic-gradient(
+    from var(--angle),
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    purple,
+    red
+  );
+  bottom: 50%;
+  left: 50%;
+  translate: -50% 50%;
+  padding: 0.5vw;
+  animation: bdrdan 2.5s infinite linear;
+}
+.imgc::before {
+  filter: blur(1.5vw);
+}
+@keyframes bdrdan {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+.testex,
+.ourphoto {
+  border: 0;
+}
+.owlink {
+  display: block;
+}
 .calculator {
   width: auto;
   max-width: 600px;
