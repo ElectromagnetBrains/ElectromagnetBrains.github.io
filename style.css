@@ -28,7 +28,7 @@ button:hover {
 }
 nav {
   background-color: #4caf50;
-  color: #fff;
+  color: #000;
   display: flex;
   position: fixed;
   top: 0;
@@ -103,12 +103,11 @@ nav a:visited {
   display: none;
   position: absolute;
   background-color: #4caf50;
-  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0.5vw;
 }
 .dropdown-content a {
-  color: #fff;
+  color: #000000;
   padding: 1vw;
   text-decoration: none;
   display: block;
@@ -131,6 +130,13 @@ nav a:visited {
   animation: fadeIn 0.3s ease;
 }
 
+.dropdown,
+.dropdown-button,
+.dropdown-content {
+  height: fit-content;
+  background-color: #4caf50;
+  color: #000;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -331,10 +337,7 @@ nav a:visited {
   width: 90vw;
   position: relative;
   z-index: 0;
-  margin-top: 250px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
+  margin: 6vw auto;
 }
 .mar {
   margin: 2.5vw;
@@ -350,12 +353,12 @@ nav a:visited {
   background: linear-gradient(to left, #3aa803, #a90529);
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 0 0 0 #ab10ab;
+  text-shadow: 0 0 0 #118708;
   animation: text-animate-tes 1s infinite alternate;
 }
 @keyframes text-animate-tes {
   100% {
-    text-shadow: 0 0 0 #cdcd45;
+    text-shadow: 0 0 0 #da0956;
   }
 }
 .ourphoto {
@@ -680,6 +683,11 @@ button.number:hover {
   line-height: 1.6;
 }
 
+.landscapeonly,
+.portraitonly {
+  display: none;
+}
+
 @media (orientation: portrait) {
   body {
     font-size: 2vh;
@@ -774,6 +782,12 @@ button.number:hover {
     border-bottom: 0.2vw solid #333;
   }
 
+  .dropdown,
+  .dropdown-button,
+  .dropdown-content {
+    width: 40vw;
+  }
+
   .dropdown {
     padding: 0.5vw 0;
     border-top: 0.5vw solid #333;
@@ -782,7 +796,7 @@ button.number:hover {
 
   .sidebarhoverable:hover {
     background-color: #4caf50;
-    color: #fff;
+    color: lightgoldenrodyellow;
   }
 
   .sidebar a {
@@ -893,6 +907,37 @@ button.number:hover {
   .instructions {
     display: none;
   }
+
+  .portraitonly {
+    display: block;
+  }
+
+  .testimonial {
+    margin: 11vw auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .testex {
+    font-size: 5vw;
+    width: 85vw;
+    text-align: center !important;
+  }
+
+  .ourphoto {
+    width: 70vw;
+    height: auto;
+    border-radius: 5vw;
+  }
+  .imgc {
+    margin-bottom: 5vw;
+  }
+  .imgc::after {
+    border-radius: 5vw;
+    padding: 2.5vw;
+  }
 }
 
 @media (orientation: landscape) {
@@ -943,9 +988,6 @@ button.number:hover {
   .dropdown-button,
   .dropdown-content {
     width: 8vw;
-    height: fit-content;
-    background-color: #4caf50;
-    color: #fff;
   }
 
   .dropdown-content a {
@@ -975,11 +1017,6 @@ button.number:hover {
     font-size: 1.5vw;
     padding: 2vw;
   }
-
-  /* .hero,
-  .hero-text {
-    margin: 5vw 0 0 0;
-  } */
 
   .landscape {
     display: block;
@@ -1056,5 +1093,9 @@ button.number:hover {
     color: #333;
     align-self: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .landscapeonly {
+    display: block;
   }
 }
