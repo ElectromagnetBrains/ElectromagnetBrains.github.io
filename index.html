@@ -7,6 +7,9 @@
     <link rel="shortcut icon" href="favicon.gifz" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+    </style>
   </head>
   <body>
     <nav>
@@ -179,6 +182,172 @@
           &gt;
         </button>
       </div>
+    </section>
+    <section>
+      <center><h1>Our Offer Ends In :</h1></center>
+      <div class="countdown-container" id="countdown-container">
+        <div class="countnair countnairr">
+          <div class="countdown" id="countdown"></div>
+          <div class="countdown-text">Days</div>
+        </div>
+        <div class="countnair countnairr">
+          <div class="countdown" id="countdown1"></div>
+          <div class="countdown-text">Hours</div>
+        </div>
+        <div class="countnair countnairr">
+          <div class="countdown" id="countdown2"></div>
+          <div class="countdown-text">Minutes</div>
+        </div>
+        <div class="countnair">
+          <div class="countdown" id="countdown3"></div>
+          <div class="countdown-text">Seconds</div>
+        </div>
+      </div>
+      <div class="containcountcontainer">
+        <div class="containcount">
+          <div class="countdown-text2">Hurry Up!</div>
+          <div class="countdown-text3">Limited Time Offer</div>
+          <div class="countdown-text4">Don't Miss Out!</div>
+        </div>
+      </div>
+      <div class="countdown-text5">Join Us Now!</div>
+      <div class="countdown-text6">Offer Ends On 31st December 2025</div>
+      <style>
+        .countnair {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          padding: 1vw;
+        }
+        .countnairr {
+          border-right: 0.1vw solid black;
+        }
+        .containcountcontainer {
+          display: flex;
+          width: fit-content;
+          margin: 0 auto;
+          font-size: 3.14159265vw;
+        }
+        .containcount {
+          display: flex;
+          flex-direction: row;
+          gap: 1vw;
+        }
+        .countdown-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0.1vw solid black;
+          border-radius: 1vw;
+          width: fit-content;
+          margin: 0 auto;
+          font-size: 3.14532478936457253788926639468vw !important;
+        }
+        .countdown {
+          font-size: 2rem;
+          font-weight: bold;
+          margin: 0 10px;
+        }
+        .countdown-text {
+          font-size: 1.5rem;
+          margin-left: 5px;
+        }
+        .countdown-text2,
+        .countdown-text3,
+        .countdown-text4,
+        .countdown-text5,
+        .countdown-text6 {
+          text-align: center;
+          font-size: 1.2rem;
+          margin-top: 10px;
+        }
+        .countdown-text2 {
+          color: red;
+          font-weight: bold;
+        }
+        .countdown-text3 {
+          color: green;
+          font-weight: bold;
+        }
+        .countdown-text4 {
+          color: blue;
+          font-weight: bold;
+        }
+        .countdown-text5 {
+          color: orange;
+          font-weight: bold;
+        }
+        .countdown-text6 {
+          color: purple;
+          font-weight: bold;
+        }
+        .countdown-text6 {
+          font-size: 1.5rem;
+          margin-top: 20px;
+        }
+        .countdown-text6:hover {
+          color: red;
+          font-weight: bold;
+        }
+        .countdown-text6:active {
+          color: blue;
+          font-weight: bold;
+        }
+        .countdown-text6:focus {
+          color: green;
+          font-weight: bold;
+        }
+        .countdown-text6:focus-within {
+          color: orange;
+          font-weight: bold;
+        }
+        .countdown-text6:focus-visible {
+          color: purple;
+          font-weight: bold;
+        }
+      </style>
+      <script>
+        var countDownDate = new Date("Apr 14, 2025 19:25:55").getTime();
+        var x = setInterval(function () {
+          var now = new Date().getTime();
+          var distance = countDownDate - now;
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("countdown").innerHTML = days;
+          document.getElementById("countdown1").innerHTML = hours;
+          document.getElementById("countdown2").innerHTML = minutes;
+          document.getElementById("countdown3").innerHTML = seconds;
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "";
+            document.getElementById("countdown1").innerHTML = "";
+            document.getElementById("countdown2").innerHTML = "";
+            document.getElementById("countdown3").innerHTML = "";
+            document.getElementsByClassName("countdown-text")[0].innerHTML = "";
+            document.getElementsByClassName("countdown-text")[1].innerHTML = "";
+            document.getElementsByClassName("countdown-text")[2].innerHTML = "";
+            document.getElementsByClassName("countdown-text")[3].innerHTML = "";
+            document.getElementsByClassName("countnairr")[0].style.border =
+              "none";
+            document.getElementsByClassName("countnairr")[1].style.border =
+              "none";
+            document.getElementsByClassName("countnairr")[2].style.border =
+              "none";
+            document.getElementById("countdown-container").innerHTML =
+              "EXPIRED";
+            document.getElementById("countdown-container").style.fontSize =
+              "3.14532478936457253788926639468vw !important";
+            document.getElementById("countdown-container").style.fontFamily =
+              "Baloo Bhaijaan 2, Bold";
+            document.getElementById("countdown-container").style.padding =
+              "1vw";
+          }
+        }, 1000);
+      </script>
     </section>
   </body>
 </html>
