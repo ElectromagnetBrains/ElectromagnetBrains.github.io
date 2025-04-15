@@ -9,6 +9,9 @@
     <script src="script.js" defer></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+      *::-webkit-scrollbar {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -37,6 +40,11 @@
                 title="Teachers"
                 class="dropdown-content-a"
                 >Teachers</a
+              >
+            </div>
+            <div>
+              <a href="pricing.html" title="Pricing" class="dropdown-content-a"
+                >Pricing</a
               >
             </div>
             <div>
@@ -103,6 +111,14 @@
                 >
               </div>
               <div class="sidebarhoverable borderm">
+                <a
+                  href="pricing.html"
+                  title="Pricing"
+                  class="dropdown-content-a"
+                  >Pricing</a
+                >
+              </div>
+              <div class="sidebarhoverable borderm">
                 <a href="videos.html" title="Videos" class="dropdown-content-a"
                   >Videos</a
                 >
@@ -133,6 +149,7 @@
       <span class="hero-subtext">Unlocking Knowledge, One Click at a Time</span>
     </p>
     <section class="Main">
+      <h1>Our Teachers</h1>
       <div class="quote-mastercontainer">
         <button onclick=" previousQuote(quoteContainer, quoteContainerWidth)">
           &lt;
@@ -183,21 +200,24 @@
         </button>
       </div>
     </section>
-    <section>
+    <section id="offer">
       <center><h1>Our Offer Ends In :</h1></center>
-      <div class="countdown-container" id="countdown-container">
-        <div class="countnair countnairr">
+      <div class="countdown-container">
+        <div class="countnair">
           <div class="countdown" id="countdown"></div>
           <div class="countdown-text">Days</div>
         </div>
-        <div class="countnair countnairr">
+        <img src="Colon svg.png" alt="" class="Countdownnair" />
+        <div class="countnair">
           <div class="countdown" id="countdown1"></div>
           <div class="countdown-text">Hours</div>
         </div>
-        <div class="countnair countnairr">
+        <img src="Colon svg.png" alt="" class="Countdownnair" />
+        <div class="countnair">
           <div class="countdown" id="countdown2"></div>
           <div class="countdown-text">Minutes</div>
         </div>
+        <img src="Colon svg.png" alt="" class="Countdownnair" />
         <div class="countnair">
           <div class="countdown" id="countdown3"></div>
           <div class="countdown-text">Seconds</div>
@@ -210,23 +230,33 @@
           <div class="countdown-text4">Don't Miss Out!</div>
         </div>
       </div>
-      <div class="countdown-text5">Join Us Now!</div>
-      <div class="countdown-text6">Offer Ends On 31st December 2025</div>
+      <a href="pricing.html" id="joinusnow"
+        ><div class="countdown-text5">Join Us Now!</div></a
+      >
+      <div class="countdown-text6">Offer Ends On New Year's Eve.</div>
       <style>
+        #offer {
+          background-color: rgb(82, 132, 24);
+          width: 90vw;
+          margin: 0 auto;
+          padding: 2vw 0;
+          border: 0.1vw solid black;
+          border-radius: 1vw;
+          font-family: "Baloo Bhaijaan 2", sans-serif;
+        }
         .countnair {
           display: flex;
-          flex-direction: column-reverse;
+          flex-direction: column;
           align-items: center;
           padding: 1vw;
-        }
-        .countnairr {
-          border-right: 0.1vw solid black;
+          border: 0.1vw solid black;
+          border-radius: 1vw;
+          background-color: #f6d70e;
         }
         .containcountcontainer {
           display: flex;
           width: fit-content;
           margin: 0 auto;
-          font-size: 3.14159265vw;
         }
         .containcount {
           display: flex;
@@ -237,11 +267,15 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          border: 0.1vw solid black;
           border-radius: 1vw;
           width: fit-content;
           margin: 0 auto;
-          font-size: 3.14532478936457253788926639468vw !important;
+          font-size: 4vw !important;
+        }
+        .Countdownnair {
+          width: 5vw;
+          height: 5vw;
+          margin: 0 1vw;
         }
         .countdown {
           font-size: 2rem;
@@ -258,27 +292,57 @@
         .countdown-text5,
         .countdown-text6 {
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 2vw;
           margin-top: 10px;
         }
+        @media (orientation: portrait) {
+          .countdown-container {
+            font-size: 4vh !important;
+          }
+          .countdown-text2,
+          .countdown-text3,
+          .countdown-text4,
+          .countdown-text5,
+          .countdown-text6 {
+            font-size: 1.78vh;
+            margin: auto 1vw;
+          }
+          .countdown {
+            font-size: 3vh;
+          }
+          .countdown-text {
+            font-size: 1.8vh;
+          }
+        }
         .countdown-text2 {
-          color: red;
+          color: rgb(219, 199, 18);
           font-weight: bold;
         }
         .countdown-text3 {
-          color: green;
+          color: rgb(20, 196, 231);
           font-weight: bold;
         }
         .countdown-text4 {
-          color: blue;
+          color: rgb(255, 0, 93);
           font-weight: bold;
         }
+        #joinusnow {
+          text-decoration: none;
+        }
         .countdown-text5 {
-          color: orange;
+          color: rgb(166, 228, 22);
+          font-weight: bold;
+        }
+        .countdown-text5:hover {
+          color: rgb(9, 229, 148);
+          font-weight: bold;
+        }
+        .countdown-text5:active {
+          color: rgb(19, 229, 244);
           font-weight: bold;
         }
         .countdown-text6 {
-          color: purple;
+          color: rgb(19, 229, 244);
           font-weight: bold;
         }
         .countdown-text6 {
@@ -289,25 +353,9 @@
           color: red;
           font-weight: bold;
         }
-        .countdown-text6:active {
-          color: blue;
-          font-weight: bold;
-        }
-        .countdown-text6:focus {
-          color: green;
-          font-weight: bold;
-        }
-        .countdown-text6:focus-within {
-          color: orange;
-          font-weight: bold;
-        }
-        .countdown-text6:focus-visible {
-          color: purple;
-          font-weight: bold;
-        }
       </style>
       <script>
-        var countDownDate = new Date("Apr 14, 2025 19:25:55").getTime();
+        var countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
         var x = setInterval(function () {
           var now = new Date().getTime();
           var distance = countDownDate - now;
@@ -323,28 +371,39 @@
           document.getElementById("countdown3").innerHTML = seconds;
           if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "";
-            document.getElementById("countdown1").innerHTML = "";
-            document.getElementById("countdown2").innerHTML = "";
-            document.getElementById("countdown3").innerHTML = "";
-            document.getElementsByClassName("countdown-text")[0].innerHTML = "";
-            document.getElementsByClassName("countdown-text")[1].innerHTML = "";
-            document.getElementsByClassName("countdown-text")[2].innerHTML = "";
-            document.getElementsByClassName("countdown-text")[3].innerHTML = "";
-            document.getElementsByClassName("countnairr")[0].style.border =
+            document.getElementsByClassName("countdown")[0].style.display =
               "none";
-            document.getElementsByClassName("countnairr")[1].style.border =
+            document.getElementsByClassName("countdown-text")[0].style.display =
               "none";
-            document.getElementsByClassName("countnairr")[2].style.border =
+            document.getElementsByClassName("countnair")[0].style.display =
               "none";
-            document.getElementById("countdown-container").innerHTML =
-              "EXPIRED";
-            document.getElementById("countdown-container").style.fontSize =
-              "3.14532478936457253788926639468vw !important";
-            document.getElementById("countdown-container").style.fontFamily =
-              "Baloo Bhaijaan 2, Bold";
-            document.getElementById("countdown-container").style.padding =
-              "1vw";
+            document.getElementsByClassName("countdown-text")[1].style.display =
+              "none";
+            document.getElementsByClassName("countnair")[1].style.display =
+              "none";
+            document.getElementsByClassName("countdown-text")[2].style.display =
+              "none";
+            document.getElementsByClassName("countnair")[2].style.display =
+              "none";
+            document.getElementsByClassName("countdown-text")[3].style.display =
+              "none";
+            document.getElementsByClassName("countnair")[3].style.display =
+              "none";
+            document.getElementsByClassName("Countdownnair")[0].style.display =
+              "none";
+            document.getElementsByClassName("Countdownnair")[1].style.display =
+              "none";
+            document.getElementsByClassName("Countdownnair")[2].style.display =
+              "none";
+            document.getElementsByClassName(
+              "countdown-container"
+            )[0].innerHTML = "EXPIRED";
+            document.getElementsByClassName(
+              "countdown-container"
+            )[0].style.border = "0.1vw solid black";
+            document.getElementsByClassName(
+              "countdown-container"
+            )[0].style.padding = "0 1vw";
           }
         }, 1000);
       </script>

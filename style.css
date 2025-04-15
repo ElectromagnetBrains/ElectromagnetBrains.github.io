@@ -424,7 +424,6 @@ nav a:visited {
 }
 .calculator {
   width: auto;
-  max-width: 600px;
   padding: 3vw;
   background-color: #26a69a;
   border-radius: 1vw;
@@ -474,8 +473,8 @@ nav a:visited {
 }
 
 button {
-  padding: 1vw;
-  font-size: 1.3vw;
+  padding: 0.5vw;
+  width: 6.79vh;
   border: none;
   border-radius: 0.5vw;
   cursor: pointer;
@@ -897,7 +896,7 @@ button.number:hover {
 
   button {
     padding: 12px;
-    font-size: 18px;
+    font-size: 2vh;
   }
 
   .calculator-display {
@@ -1031,7 +1030,7 @@ button.number:hover {
   }
 
   .quote-mastercontainer {
-    width: 80vw;
+    width: 75vw;
     margin: auto;
   }
 
@@ -1073,7 +1072,7 @@ button.number:hover {
   }
 
   button {
-    font-size: 1.1vw;
+    font-size: 1vw;
     padding: 0.8vw;
   }
 
