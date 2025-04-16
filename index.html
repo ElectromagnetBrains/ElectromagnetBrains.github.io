@@ -407,6 +407,245 @@
           }
         }, 1000);
       </script>
+      </div>
     </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <form action="process_form.php" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Comments/Queries:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="teachers.html">Teachers</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#"><img src="facebook.jpg" alt="Facebook" /></a>
+            <a href="#"><img src="youtube.jpg" alt="YouTube" /></a>
+            <a href="#"><img src="instagram.jpg" alt="Instagram" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Electromagnet Brains. All rights reserved.
+      </div>
+    
+
+    <style>
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 2rem 0;
+        font-family: "Baloo Bhaijaan 2", sans-serif;
+        margin-top: 10vw;
+        position: relative; /* Ensure footer is properly positioned */
+        z-index: 10; /* Bring footer to the front */
+      }
+      
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin: 5vw;
+      }
+      
+      .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #f6d70e;
+      }
+      
+      .contact-form .form-group {
+        margin-bottom: 1rem;
+      }
+      
+      .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff; /* Ensure inputs are visible */
+        color: #000; /* Ensure text is visible */
+        z-index: 11; /* Ensure inputs are interactive */
+        position: relative;
+      }
+      
+      .submit-btn {
+        background-color: #f6d70e;
+        color: #2c3e50;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        width: fit-content;
+      }
+      
+      .submit-btn:hover {
+        background-color: #e6c70e;
+      }
+      
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      
+      .footer-section ul li a:hover {
+        color: #f6d70e;
+      }
+      
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .social-icons img {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .copyright {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #444;
+      }
+      
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin: 5vw;
+      }
+      
+      .footer-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #f6d70e;
+      }
+      
+      .contact-form .form-group {
+        margin-bottom: 1rem;
+      }
+      
+      .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      
+      .submit-btn {
+        background-color: #f6d70e;
+        color: #2c3e50;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        width: fit-content;
+      }
+      
+      .submit-btn:hover {
+        background-color: #e6c70e;
+      }
+      
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      
+      .footer-section ul li a:hover {
+        color: #f6d70e;
+      }
+      
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .social-icons img {
+        width: 32px;
+        height: 32px;
+      }
+      
+      .copyright {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #444;
+      }
+    </style>
+    </footer>
   </body>
-</html>
+  </html>
+  
