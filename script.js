@@ -232,3 +232,37 @@ document.addEventListener("keydown", (event) => {
     calculator.appendFunction("max");
   }
 });
+var countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
+var x = setInterval(function () {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown").innerHTML = days;
+  document.getElementById("countdown1").innerHTML = hours;
+  document.getElementById("countdown2").innerHTML = minutes;
+  document.getElementById("countdown3").innerHTML = seconds;
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementsByClassName("countdown")[0].style.display = "none";
+    document.getElementsByClassName("countdown-text")[0].style.display = "none";
+    document.getElementsByClassName("countnair")[0].style.display = "none";
+    document.getElementsByClassName("countdown-text")[1].style.display = "none";
+    document.getElementsByClassName("countnair")[1].style.display = "none";
+    document.getElementsByClassName("countdown-text")[2].style.display = "none";
+    document.getElementsByClassName("countnair")[2].style.display = "none";
+    document.getElementsByClassName("countdown-text")[3].style.display = "none";
+    document.getElementsByClassName("countnair")[3].style.display = "none";
+    document.getElementsByClassName("Countdownnair")[0].style.display = "none";
+    document.getElementsByClassName("Countdownnair")[1].style.display = "none";
+    document.getElementsByClassName("Countdownnair")[2].style.display = "none";
+    document.getElementsByClassName("countdown-container")[0].innerHTML =
+      "EXPIRED";
+    document.getElementsByClassName("countdown-container")[0].style.border =
+      "0.1vw solid black";
+    document.getElementsByClassName("countdown-container")[0].style.padding =
+      "0 1vw";
+  }
+}, 1000);
